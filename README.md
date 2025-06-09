@@ -5,16 +5,52 @@
 ## 🚀 Быстрый старт
 
 ### Требования
-- **Go 1.21+** 
-- **Node.js 18+**
-- **MongoDB 6.0+**
+- **Docker** и **Docker Compose**
+- **Go 1.21+** (для локальной разработки)
+- **Node.js 18+** (для локальной разработки)
 
-### Установка и запуск
+### 🐳 Запуск через Docker (Рекомендуется)
 
 1. **Клонируйте репозиторий**
    ```bash
-   git clone <url>
-   cd "Business Schedule"
+   git clone https://github.com/RustamTss/Trucking.git
+   cd Trucking
+   ```
+
+2. **Создайте .env файл в корне проекта**
+   ```bash
+   cp .env.example .env
+   ```
+   
+   Или создайте `.env` файл с содержимым:
+   ```env
+   MONGODB_URI=mongodb://mongodb:27017/business_schedule
+   JWT_SECRET=your_very_secret_jwt_key_here_make_it_long_and_secure
+   PORT=8080
+   REACT_APP_API_URL=http://localhost:8080
+   ```
+
+3. **Запустите все сервисы**
+   ```bash
+   docker-compose up -d
+   ```
+
+4. **Проверьте статус контейнеров**
+   ```bash
+   docker-compose ps
+   ```
+
+Приложение будет доступно на:
+- **Фронтенд**: http://localhost:3000
+- **Бэкенд API**: http://localhost:8080
+- **MongoDB**: localhost:27017
+
+### 💻 Локальная разработка
+
+1. **Клонируйте репозиторий**
+   ```bash
+   git clone https://github.com/RustamTss/Trucking.git
+   cd Trucking
    ```
 
 2. **Запустите MongoDB**

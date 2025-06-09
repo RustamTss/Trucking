@@ -1,15 +1,15 @@
-import React from 'react';
-import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
-import Dashboard from './components/Dashboard';
-import Login from './components/Login';
-import UserProfile from './components/UserProfile';
-import CompanyForm from './components/companies/CompanyForm';
-import CompanyList from './components/companies/CompanyList';
-import VehicleForm from './components/vehicles/VehicleForm';
-import VehicleList from './components/vehicles/VehicleList';
-import { AuthProvider, useAuth } from './context/AuthContext';
-import { CompanyProvider } from './context/CompanyContext';
-import { VehicleProvider } from './context/VehicleContext';
+import React from 'react'
+import { Navigate, Route, BrowserRouter as Router, Routes } from 'react-router-dom'
+import Dashboard from './components/Dashboard'
+import Login from './components/Login'
+import UserProfile from './components/UserProfile'
+import CompanyForm from './components/companies/CompanyForm'
+import CompanyList from './components/companies/CompanyList'
+import VehicleForm from './components/vehicles/VehicleForm'
+import VehicleList from './components/vehicles/VehicleList'
+import { AuthProvider, useAuth } from './context/AuthContext'
+import { CompanyProvider } from './context/CompanyContext'
+import { VehicleProvider } from './context/VehicleContext'
 
 const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const { user, isLoading } = useAuth();
